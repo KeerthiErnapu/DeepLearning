@@ -1,0 +1,40 @@
+import numpy as np
+#AND GATE PERCEPTRON
+def unitstep(v):
+  if(v>0):
+    return 1
+  else:
+    return 0
+def perceptron(x,w,b):
+  v=np.dot(x,w)+b
+  y=unitstep(v)
+  return y
+def and_logic(x):
+  w=np.array([1,1])
+  b=-1
+  return perceptron(x,w,b)
+test1=np.array([0,1])
+test2=np.array([1,1])
+test3=np.array([0,0])
+test4=np.array([1,0])
+print(and_logic(test4))
+
+#OR GATE PERCEPTRON
+def unitstep(v):
+  if(v>=0):
+    return 1
+  else:
+    return 0
+def perceptron(x,w,b):
+  v=np.dot(x,w)+b
+  y=unitstep(v)
+  return y
+def or_logic(x):
+  w=np.array([1,1])
+  b=-0.5
+  return perceptron(x,w,b)
+test1=np.array([0,1])
+test2=np.array([1,1])
+test3=np.array([0,0])
+test4=np.array([1,0])
+print(and_logic(test1))
